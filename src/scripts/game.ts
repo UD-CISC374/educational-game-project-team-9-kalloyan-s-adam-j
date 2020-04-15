@@ -5,7 +5,7 @@ import GameConfig = Phaser.Types.Core.GameConfig;
 import HuntingScene from './scenes/huntingScene';
 import MenuScene from './scenes/menuScene';
 
-const DEFAULT_WIDTH = 500;
+const DEFAULT_WIDTH = 600;
 const DEFAULT_HEIGHT = 400;
 
 
