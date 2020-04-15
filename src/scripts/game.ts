@@ -17,7 +17,7 @@ const config: GameConfig = {
         width: DEFAULT_WIDTH,
         height: DEFAULT_HEIGHT
     },
-    scene: [PreloadScene, MainScene],
+    scene: [PreloadScene, MainScene, MenuScene],
     physics: {
         default: 'arcade',
         arcade: {
