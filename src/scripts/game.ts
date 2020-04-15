@@ -2,8 +2,9 @@ import 'phaser';
 import MainScene from './scenes/mainScene';
 import PreloadScene from './scenes/preloadScene';
 import GameConfig = Phaser.Types.Core.GameConfig;
+import HuntingScene from './scenes/huntingScene';
 
-const DEFAULT_WIDTH = 400;
+const DEFAULT_WIDTH = 500;
 const DEFAULT_HEIGHT = 400;
 
 
@@ -16,7 +17,7 @@ const config: GameConfig = {
         width: DEFAULT_WIDTH,
         height: DEFAULT_HEIGHT
     },
-    scene: [PreloadScene, MainScene],
+    scene: [PreloadScene, MainScene, HuntingScene],
     physics: {
         default: 'arcade',
         arcade: {
