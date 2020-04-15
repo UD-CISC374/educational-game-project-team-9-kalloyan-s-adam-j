@@ -27,6 +27,6 @@ export default class HuntingScene extends Phaser.Scene {
   
     update() {
       this.background.tilePositionX += 5;
-      this.beaver.x = this.background.tilePositionX;
+      this.beaver.scrollFactorX;
     }
 }
