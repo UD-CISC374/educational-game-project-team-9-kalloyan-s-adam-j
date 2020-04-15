@@ -22,9 +22,12 @@ export default class HuntingScene extends Phaser.Scene {
         //this.beaver = this.add.sprite(this.randomBeaverX(), this.randomBeaverY(), 'beaver');
         this.beaver.setScale(.75);
         //this.beaver.play(this.randomBeaverAnimation());
+        this.beaver.setInteractive();
+        this.input.on('gameobjectdown', this.captureBeaver, this);
         this.beavers.add(this.beaver);
       }
       this.physics.add.overlap(this.beavers, this.beavers, this.changeBeaverLocation, undefined, this);
+
       //this.beaver.setAngle(330);
     }
   
@@ -62,8 +65,12 @@ export default class HuntingScene extends Phaser.Scene {
     }
 
     changeBeaverLocation(beaver1, beaver2):void{
-      beaver1.x = this.randomBeaverX();
+      beaver1.x += this.randomBeaverX();
       beaver1.y = this.randomBeaverY();
 
+    }
+
+    captureBeaver(pointer, gameObject):void{
+      gameObject.destroy();
     }
 }
