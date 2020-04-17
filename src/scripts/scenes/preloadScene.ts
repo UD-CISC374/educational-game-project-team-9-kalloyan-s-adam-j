@@ -9,6 +9,9 @@ export default class PreloadScene extends Phaser.Scene {
     this.load.image("deer", "assets/beaver_game/101-deer.png");
     this.load.image("skunk", "assets/beaver_game/101-skunk.png");
     this.load.image("menuscreenbg", "assets/images/menu_background.jpg");
+    this.load.image("playButton", "./assets/images/playbutton.PNG");
+    this.load.image("playButtonPress", "./assets/images/playbuttonpress.png");
+    this.load.image("playButtonHover", "./assets/images/playbuttonhover.png");
   }
 
   create() {
@@ -26,6 +29,8 @@ export default class PreloadScene extends Phaser.Scene {
         frameRate: 8,
         repeat: -1
     });
-    this.scene.start('MainScene');
+    this.scene.start('MenuScene');
+
+   
   }
 }
