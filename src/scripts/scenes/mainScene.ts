@@ -7,6 +7,7 @@ export default class MainScene extends Phaser.Scene {
   }
 
   create() {
+    //this.scene.start('MenuScene');
     this.scene.start("HuntingScene");
     
   }
