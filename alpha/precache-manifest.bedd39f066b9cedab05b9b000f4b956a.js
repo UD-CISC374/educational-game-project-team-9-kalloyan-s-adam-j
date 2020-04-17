@@ -48,23 +48,35 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/https://github.com/UD-CISC374/educational-game-project-team-9-kalloyan-s-adam-j/alphaassets/icons/icons8-game-controller-16.png"
   },
   {
-    "revision": "8429cde312f6e0167a3cafe0fad170a0",
+    "revision": "4978e5cde168918a0a621f834b078f15",
     "url": "/https://github.com/UD-CISC374/educational-game-project-team-9-kalloyan-s-adam-j/alphaassets/images/menu_background.jpg"
+  },
+  {
+    "revision": "452fee816764902b546f6ec860297c03",
+    "url": "/https://github.com/UD-CISC374/educational-game-project-team-9-kalloyan-s-adam-j/alphaassets/images/playbutton.PNG"
+  },
+  {
+    "revision": "b3e3e3b847e356f584170670b2c996b3",
+    "url": "/https://github.com/UD-CISC374/educational-game-project-team-9-kalloyan-s-adam-j/alphaassets/images/playbuttonhover.png"
+  },
+  {
+    "revision": "469e562f9bd54a416ae547fa6e80a8f5",
+    "url": "/https://github.com/UD-CISC374/educational-game-project-team-9-kalloyan-s-adam-j/alphaassets/images/playbuttonpress.png"
   },
   {
     "revision": "53cefca2a0f75654486b180949686165",
     "url": "/https://github.com/UD-CISC374/educational-game-project-team-9-kalloyan-s-adam-j/alphafavicon.ico"
   },
   {
-    "revision": "10cb6322329dd08986e8",
-    "url": "/https://github.com/UD-CISC374/educational-game-project-team-9-kalloyan-s-adam-j/alphagen.main.d7c3c7adae7f6cbcf314.bundle.js"
+    "revision": "73aeb58ea41ae44c7718",
+    "url": "/https://github.com/UD-CISC374/educational-game-project-team-9-kalloyan-s-adam-j/alphagen.main.7af607cf8257a14ad6b6.bundle.js"
   },
   {
     "revision": "5e69403aa42e950fedff",
     "url": "/https://github.com/UD-CISC374/educational-game-project-team-9-kalloyan-s-adam-j/alphagen.vendors.0805bb80903235d40eaf.bundle.js"
   },
   {
-    "revision": "71bdee10f6d953a366e35f5b8c8c3027",
+    "revision": "e26a4cf02cd6df32e3c48290b7cec981",
     "url": "/https://github.com/UD-CISC374/educational-game-project-team-9-kalloyan-s-adam-j/alphaindex.html"
   },
   {
