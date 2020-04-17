@@ -150,6 +150,7 @@ export default class HuntingScene extends Phaser.Scene {
       let num = Math.random() * 2;
       if(num === 0)
         return true;
-      return false;
+      else
+        return false;
     }
 }
