@@ -6,7 +6,6 @@ import HuntingScene from './scenes/huntingScene';
 import MenuScene from './scenes/menuScene';
 import MerchantScene from './scenes/merchantScene';
 
-
 const DEFAULT_WIDTH = 600;
 const DEFAULT_HEIGHT = 400;
 
