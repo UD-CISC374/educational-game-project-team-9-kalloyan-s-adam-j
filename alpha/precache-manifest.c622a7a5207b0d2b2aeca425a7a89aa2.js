@@ -56,27 +56,47 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/educational-game-project-team-9-kalloyan-s-adam-j/alphaassets/images/playbutton.PNG"
   },
   {
-    "revision": "b3e3e3b847e356f584170670b2c996b3",
-    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/alphaassets/images/playbuttonhover.png"
+    "revision": "ca275804f73d32cc1179a4a9fd1a326f",
+    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/alphaassets/images/reddot1.png"
   },
   {
-    "revision": "469e562f9bd54a416ae547fa6e80a8f5",
-    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/alphaassets/images/playbuttonpress.png"
+    "revision": "e4e8da5027663d41c9495275c68c0dc7",
+    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/alphaassets/images/startscreen.jpg"
+  },
+  {
+    "revision": "db00f48f5caaf878c5a32394da430917",
+    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/alphaassets/images/usmap.jpg"
+  },
+  {
+    "revision": "357c31c7c7ada3df9f340039f9e43296",
+    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/alphaassets/trading_scene/LogCabin.png"
+  },
+  {
+    "revision": "2dae146ee14a4d1419a75c8213266aa1",
+    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/alphaassets/trading_scene/buyer.png"
+  },
+  {
+    "revision": "c046e6edd6abb6ec90d7277d99c1fc48",
+    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/alphaassets/trading_scene/dad.png"
+  },
+  {
+    "revision": "a90df7419552773be6daa8f67779d386",
+    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/alphaassets/trading_scene/three_silver_coins.png"
   },
   {
     "revision": "53cefca2a0f75654486b180949686165",
     "url": "/educational-game-project-team-9-kalloyan-s-adam-j/alphafavicon.ico"
   },
   {
-    "revision": "f65283335d9df63c0b48",
-    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/alphagen.main.30bd2887e1d98934851d.bundle.js"
+    "revision": "8678d0bea8c1da082ef2",
+    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/alphagen.main.d3be2f4c8ab0f9ef3c82.bundle.js"
   },
   {
-    "revision": "5e69403aa42e950fedff",
-    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/alphagen.vendors.0805bb80903235d40eaf.bundle.js"
+    "revision": "3e6a94567f4f575a23ba",
+    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/alphagen.vendors.dda463f5e75cc32e0e32.bundle.js"
   },
   {
-    "revision": "e414315b72fb1c9619dedcd3b2877fec",
+    "revision": "82bcf787bb3d87577877b0a44b8956ed",
     "url": "/educational-game-project-team-9-kalloyan-s-adam-j/alphaindex.html"
   },
   {
