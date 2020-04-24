@@ -4,6 +4,7 @@ import PreloadScene from './scenes/preloadScene';
 import GameConfig = Phaser.Types.Core.GameConfig;
 import HuntingScene from './scenes/huntingScene';
 import MenuScene from './scenes/menuScene';
+import MapScene from './scenes/mapScene';
 import MerchantScene from './scenes/merchantScene';
 
 const DEFAULT_WIDTH = 600;
@@ -19,7 +20,7 @@ const config: GameConfig = {
         width: DEFAULT_WIDTH,
         height: DEFAULT_HEIGHT
     },
-    scene: [PreloadScene, MainScene, HuntingScene, MenuScene, MerchantScene],
+    scene: [PreloadScene, MainScene, HuntingScene, MenuScene, MerchantScene, MapScene],
     physics: {
         default: 'arcade',
         arcade: {
