@@ -13,13 +13,9 @@ export default class MenuScene extends Phaser.Scene {
         this.background = this.add.image(0,0,"menuscreenbg");
         this.background.setOrigin(0,0);
 
-        const actionOnClick = () => {
-          console.log('click')
-        }
-
-        let btn1 = new Button(this, 200, 250, 'playButton', actionOnClick)
+        let btn1 = new Button(this, 200, 250, 'playButton');
         btn1.onInputUp = () => {
-          this.scene.start('MainScene');
+          this.scene.start('MapScene');
         }
         btn1.setOrigin(0)
 
