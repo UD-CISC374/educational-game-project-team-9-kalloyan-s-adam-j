@@ -37,11 +37,6 @@ export default class PreloadScene extends Phaser.Scene {
     });
     this.scene.start('MenuScene');
 
-    /**
-     * could we create separate functions for these that would load those images and the audio, etc..
-     * for example, loadImagesMenu() would just load all the images for the menu, and then we would
-     * have loadImagesBeaver() and it would load all the images for the beaver function. 
-     */
-
+   
   }
 }
