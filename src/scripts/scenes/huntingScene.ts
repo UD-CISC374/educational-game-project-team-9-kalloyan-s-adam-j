@@ -6,6 +6,9 @@ export default class HuntingScene extends Phaser.Scene {
     private skunks: Phaser.Physics.Arcade.Group;
     private startPoint: number;
     private tutorialText: Phaser.GameObjects.Text;
+    beaverScore: number;
+    private scoreText: Phaser.GameObjects.Text;
+    private beaverIcon: Phaser.GameObjects.Sprite;
   
     constructor() {
       super({ key: 'HuntingScene' });
@@ -21,6 +24,14 @@ export default class HuntingScene extends Phaser.Scene {
       this.tutorialText = this.add.text(this.scale.width / 2, this.scale.height / 4, "Click on the             to capture them", {font: "bold 24px Arial", fill: "#000"});
       this.tutorialText.setOrigin(0.5, 0.5);
       this.tutorialBeaver = this.add.sprite(this.scale.width / 2 - 20, this.scale.height / 4 - 20, 'beaver', 3);
+
+      //adding the score at the top left corner
+      this.beaverScore = 0;
+      this.beaverIcon = this.add.sprite(20, 5, 'beaver', 3);
+      this.beaverIcon.setScale(.5);
+      this.scoreText = this.add.text(this.beaverIcon.displayWidth + 5, 5, "00", {font: "20px", fill: "#000"});
+      this.scoreText.setOrigin(0);
+      
 
       //creating the various animal groups and disabling their gravity
       this.beavers = this.physics.add.group({
@@ -56,9 +67,11 @@ export default class HuntingScene extends Phaser.Scene {
         beaver.setScale(.75);
         //this.beaver.play(this.randomBeaverAnimation());
         beaver.setInteractive();
-        this.input.on('gameobjectdown', this.captureBeaver, this);
         this.beavers.add(beaver);
       }
+
+      this.input.on('gameobjectdown', this.captureBeaver, this);
+
       //code for handling what to do when animals spawn on top of each other
       this.physics.add.overlap(this.beavers, this.beavers, this.changeAnimalLocation, undefined, this);
       this.physics.add.overlap(this.beavers, this.deers, this.changeAnimalLocation, undefined, this);
@@ -98,7 +111,7 @@ export default class HuntingScene extends Phaser.Scene {
 
       //changing scenes after 30 seconds
       if(this.getTimer() - this.startPoint >= 30000){
-        this.scene.start('MerchantScene');
+        this.scene.start('MerchantScene', {score: this.beaverScore});
       }
     }
 
@@ -136,7 +149,11 @@ export default class HuntingScene extends Phaser.Scene {
 
     //destroying a beaver when it is clicked
     captureBeaver(pointer, gameObject):void{
+      this.beaverScore += 1;
+      console.log(this.beaverScore);
       gameObject.destroy();
+      
+      this.scoreText.text = this.zeroPad(this.beaverScore, 2);
     }
 
     //getting the current time in milliseconds
@@ -147,9 +164,18 @@ export default class HuntingScene extends Phaser.Scene {
 
     //function that randomly returns true or false
     trueOrFalse(): boolean{
-      let num = Math.random() * 2;
+      let num = Math.floor(Math.random() * 2);
       if(num === 0)
         return true;
-      return false;
+      else
+        return false;
+    }
+
+    zeroPad(number, size){
+      let stringNumber = String(number);
+      while(stringNumber.length < (size || 2)){
+        stringNumber = "0" + stringNumber;
+      }
+      return stringNumber;
     }
 }
