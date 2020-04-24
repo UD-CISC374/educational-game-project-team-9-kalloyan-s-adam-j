@@ -9,6 +9,10 @@ export default class PreloadScene extends Phaser.Scene {
     this.load.image("deer", "assets/beaver_game/101-deer.png");
     this.load.image("skunk", "assets/beaver_game/101-skunk.png");
     this.load.image("menuscreenbg", "assets/images/menu_background.jpg");
+    this.load.image("logCabin", "assets/trading_scene/LogCabin.png");
+    this.load.image("dad", "assets/trading_scene/dad.png");
+    this.load.image("buyer", "assets/trading_scene/buyer.png");
+    this.load.image("coins", "assets/trading_scene/three_silver_coins.png");
   }
 
   create() {
