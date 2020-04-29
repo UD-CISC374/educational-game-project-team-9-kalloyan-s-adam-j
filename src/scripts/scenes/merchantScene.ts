@@ -64,7 +64,7 @@ export default class MerchantScene extends Phaser.Scene {
     update() {
       //changing the x coordinate of the thrown beavers
       this.beavers.children.iterate(function(child){
-        child.x -= 5;
+        child.x -= 1;
       }.bind(this));
       //updating the text for the money count
       this.moneyText.text = "$" + this.moneyAmount;
