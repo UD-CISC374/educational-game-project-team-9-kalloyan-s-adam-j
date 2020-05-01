@@ -110,7 +110,7 @@ export default class HuntingScene extends Phaser.Scene {
       }
 
       //changing scenes after 30 seconds
-      if(this.getTimer() - this.startPoint >= 30000){
+      if(this.getTimer() - this.startPoint >= 10000){
         this.scene.start('MerchantScene', {score: this.beaverScore});
       }
     }
