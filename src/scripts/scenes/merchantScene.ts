@@ -1,4 +1,5 @@
 import HuntingScene from "./huntingScene";
+import DialogBox from "../objects/dialogBox";
 
 export default class MerchantScene extends Phaser.Scene {
   private background: Phaser.GameObjects.Image;
@@ -38,6 +39,8 @@ export default class MerchantScene extends Phaser.Scene {
       this.buyer = this.physics.add.sprite(350, 325, "buyer");
       this.buyer.setScale(.27);
 
+      let box = new DialogBox(this, "My dad sold the beaver furs, so we could get enough money for the journey.");
+
       //adding the money count at the top left corner
       this.moneyAmount = 0;
       this.coinIcon = this.add.sprite(20, 12, 'coins', 3);
@@ -64,7 +67,9 @@ export default class MerchantScene extends Phaser.Scene {
     update() {
       //changing the x coordinate of the thrown beavers
       this.beavers.children.iterate(function(child){
-        child.x -= 1;
+        if(child.x > 400)
+          child.setVelocityY(-100);
+        child.setVelocityX(-200);
       }.bind(this));
       //updating the text for the money count
       this.moneyText.text = "$" + this.moneyAmount;
@@ -72,7 +77,7 @@ export default class MerchantScene extends Phaser.Scene {
 
     //creates the beavers and adds them to the beavers group
     spawnBeaver():void {
-      let beaver = this.physics.add.sprite(445, 300, "beaver", 3);
+      let beaver = this.physics.add.sprite(435, 340, "beaver", 3);
       beaver.setScale(.75);
       /*let points = [ 50, 400, 200, 200, 350, 300, 500, 500, 700, 400 ];
       let curve = new Phaser.Curves.Spline(points);
