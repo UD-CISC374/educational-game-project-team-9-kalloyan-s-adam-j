@@ -28,7 +28,7 @@ export default class MapScene extends Phaser.Scene {
         let nodeNY = new Button(this, 500, 90, 'reddot1')//.setInteractive(); 
         //this.input.setDraggable(nodeNY);
         nodeNY.onInputUp = () => {
-          this.scene.start('HuntingScene');
+          this.scene.start('HouseScene');
         }
         nodeNY.setOrigin(0)
 
