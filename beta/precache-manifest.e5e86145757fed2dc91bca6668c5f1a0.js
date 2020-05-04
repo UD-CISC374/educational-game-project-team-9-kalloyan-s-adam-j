@@ -28,6 +28,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaassets/citations.md"
   },
   {
+    "revision": "abf0add5949ea1ddb026ee7a64012c73",
+    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaassets/farm_scene/house.png"
+  },
+  {
+    "revision": "e0b4af2f9d51ba9f005ac534dd4a8996",
+    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaassets/farm_scene/houseonfire.png"
+  },
+  {
     "revision": "53cefca2a0f75654486b180949686165",
     "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaassets/icons/favicon.ico"
   },
@@ -48,14 +56,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaassets/icons/icons8-game-controller-16.png"
   },
   {
-    "revision": "38fb005dfddd15993e0891ae2c478e9b",
-    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaassets/images/MississippiBG.jpg"
-  },
-  {
-    "revision": "6db9dcc4ae2491a3218dc64ad52942ce",
-    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaassets/images/boat.png"
-  },
-  {
     "revision": "4978e5cde168918a0a621f834b078f15",
     "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaassets/images/menu_background.jpg"
   },
@@ -66,14 +66,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "ca275804f73d32cc1179a4a9fd1a326f",
     "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaassets/images/reddot1.png"
-  },
-  {
-    "revision": "792eb986d4e7c365a597e4c0453b3d2e",
-    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaassets/images/rock.png"
-  },
-  {
-    "revision": "79a5434af25441369ae5f628ef9f1f81",
-    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaassets/images/shipanim.gif"
   },
   {
     "revision": "e4e8da5027663d41c9495275c68c0dc7",
@@ -100,19 +92,23 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaassets/trading_scene/three_silver_coins.png"
   },
   {
+    "revision": "0ff3710debd584a3e258e11b11125f03",
+    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaassets/train_scene/train.png"
+  },
+  {
     "revision": "53cefca2a0f75654486b180949686165",
     "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betafavicon.ico"
   },
   {
-    "revision": "4c8d112f626972521267",
-    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betagen.main.04cec50110d113046c29.bundle.js"
+    "revision": "d54649ad921925419ba9",
+    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betagen.main.8911140c62551c0934c8.bundle.js"
   },
   {
-    "revision": "3e6a94567f4f575a23ba",
-    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betagen.vendors.dda463f5e75cc32e0e32.bundle.js"
+    "revision": "79244101a84faa626992",
+    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betagen.vendors.b45a024788a7c2f75858.bundle.js"
   },
   {
-    "revision": "cf07b2697070da7fb348565e48fb282a",
+    "revision": "c65aef5342fa5a11bf87eadafbd78115",
     "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaindex.html"
   },
   {
