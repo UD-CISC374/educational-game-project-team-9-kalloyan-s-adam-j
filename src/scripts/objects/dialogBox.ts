@@ -5,6 +5,8 @@ export default class DialogBox extends Phaser.GameObjects.Group {
     private num: number = 0;
     private timedEvent: Phaser.Time.TimerEvent;
     private background: Phaser.GameObjects.Rectangle;
+    private isDone: boolean = false;
+    private dialogCount: number = 0;
     
 
     constructor(scene: Phaser.Scene, text: string, width = scene.scale.width * 2/3, height = scene.scale.height/4) {
@@ -15,6 +17,7 @@ export default class DialogBox extends Phaser.GameObjects.Group {
         /*this.add(this.background);
         scene.add.existing(this.background);*/
 
+        //sets the text in the dialog box
         this.setText(scene, text);
 
         //this.dialog = text.split(' ');
@@ -42,6 +45,7 @@ export default class DialogBox extends Phaser.GameObjects.Group {
             this.timedEvent.destroy();
     }*/
 
+    //sets the properties of the text
     _setText(scene: Phaser.Scene, text: string): void{
         if(this.displayedText)
             this.displayedText.destroy();
@@ -55,8 +59,11 @@ export default class DialogBox extends Phaser.GameObjects.Group {
             }});
     }
 
+    //runs a timer event to animate the words
     setText(scene: Phaser.Scene, text: string): void{
         this.num = 0;
+        this.isDone = false;
+        this.dialogCount++;
         this.dialog = text.split(' ');
         if(this.timedEvent)
             this.timedEvent.remove();
@@ -65,18 +72,30 @@ export default class DialogBox extends Phaser.GameObjects.Group {
         this._setText(scene, tempText);
 
         this.timedEvent = scene.time.addEvent({
-            delay: 200,
+            delay: 300,
             callback: this.animateText,
             callbackScope: this,
             loop: true
         });
     }
 
+    //displayes a new word every time it is called
     animateText(): void{
         this.num++;
         this.displayedText.setText(this.displayedText.text + this.dialog[this.num - 1] + " "); //I'm so glad I decided to add the space here because for the life of me I could not figure out how to get the text to wrap
-        if(this.num === this.dialog.length)
+        console.log("num: " + this.num + " length: " + this.dialog.length);
+        if(this.num === this.dialog.length){
             this.timedEvent.remove();
+            this.isDone = true;
+        }
+    }
+
+    completedDialog(): boolean{
+        return this.isDone;
+    }
+
+    getDialogCount(): number{
+        return this.dialogCount;
     }
 
 

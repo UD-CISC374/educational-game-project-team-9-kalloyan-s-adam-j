@@ -18,6 +18,8 @@ export default class PreloadScene extends Phaser.Scene {
     this.load.image("playButton", "./assets/images/playbutton.PNG");
     this.load.image("playButtonPress", "./assets/images/playbuttonpress.png");
     this.load.image("playButtonHover", "./assets/images/playbuttonhover.png");
+    this.load.image("train", "assets/train_scene/train.png");
+    this.load.image("house", "assets/farm_scene/houseonfire.png");
   }
 
   create() {
