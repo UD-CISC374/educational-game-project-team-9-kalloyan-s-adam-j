@@ -16,7 +16,7 @@ export default class HuntingScene extends Phaser.Scene {
   
     create() {
       //setting the background of the game
-      this.background = this.add.tileSprite(0, 0, 1926, 1081, "forest");
+      this.background = this.add.tileSprite(0, 0, 1926 , 1081, "forest");
       this.background.setOrigin(0, 0);
       this.background.setScale(.37, .37);
 
@@ -87,6 +87,7 @@ export default class HuntingScene extends Phaser.Scene {
     update() {
       //moving the background
       this.background.tilePositionX += 5;
+      
 
       //moving all of the animals in the groups to make it seem like they are in one place on the tilesprite
       this.skunks.children.iterate(function(child){

@@ -6,12 +6,16 @@ import HuntingScene from './scenes/huntingScene';
 import MenuScene from './scenes/menuScene';
 import MapScene from './scenes/mapScene';
 import MerchantScene from './scenes/merchantScene';
+import Mississippi from './scenes/mississippiScene';
 import TrainScene from './scenes/trainScene';
 import HouseScene from './scenes/houseScene';
 
 const DEFAULT_WIDTH = 600;
 const DEFAULT_HEIGHT = 400;
 
+const gameSettings = {
+    playerSpeed: 200,
+}
 
 const config: GameConfig = {
     backgroundColor: 'ffffff',
@@ -22,14 +26,16 @@ const config: GameConfig = {
         width: DEFAULT_WIDTH,
         height: DEFAULT_HEIGHT
     },
-    scene: [PreloadScene, MainScene, HuntingScene, MenuScene, MerchantScene, MapScene, TrainScene, HouseScene],
+  
+    scene: [PreloadScene, MainScene, HuntingScene, MenuScene, MerchantScene, MapScene, TrainScene, HouseScene, Mississippi],
+
     physics: {
         default: 'arcade',
         arcade: {
             debug: false,
-            gravity: { y: 0 }
+            gravity: { y: 1 }
         }
-    }
+    },
 };
 
 window.addEventListener('load', () => {
