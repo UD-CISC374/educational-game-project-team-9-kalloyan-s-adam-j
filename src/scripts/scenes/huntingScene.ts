@@ -6,7 +6,7 @@ export default class HuntingScene extends Phaser.Scene {
     private skunks: Phaser.Physics.Arcade.Group;
     private startPoint: number;
     private tutorialText: Phaser.GameObjects.Text;
-    beaverScore: number;
+    beaverScore: number = 0;
     private scoreText: Phaser.GameObjects.Text;
     private beaverIcon: Phaser.GameObjects.Sprite;
   
@@ -110,8 +110,8 @@ export default class HuntingScene extends Phaser.Scene {
         this.tutorialBeaver.setActive(false).setVisible(false);
       }
 
-      //changing scenes after 30 seconds
-      if(this.getTimer() - this.startPoint >= 30000){
+      //changing scenes after 40 seconds
+      if(this.getTimer() - this.startPoint >= 40000){
         this.scene.start('MerchantScene', {score: this.beaverScore});
       }
     }

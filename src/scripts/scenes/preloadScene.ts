@@ -24,6 +24,9 @@ export default class PreloadScene extends Phaser.Scene {
     this.load.image("boat", "./assets/images/boat.png");
     this.load.image("rock", "./assets/images/rock.png");
     this.load.image("crate", "./assets/images/crate.png");
+    this.load.image("train", "assets/train_scene/train.png");
+    this.load.image("house", "assets/farm_scene/houseonfire.png");
+
   }
 
   create() {
@@ -43,11 +46,6 @@ export default class PreloadScene extends Phaser.Scene {
     });
     this.scene.start('MenuScene');
 
-    /**
-     * could we create separate functions for these that would load those images and the audio, etc..
-     * for example, loadImagesMenu() would just load all the images for the menu, and then we would
-     * have loadImagesBeaver() and it would load all the images for the beaver function. 
-     */
-
+   
   }
 }
