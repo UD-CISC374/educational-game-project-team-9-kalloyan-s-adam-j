@@ -19,13 +19,14 @@ export default class PreloadScene extends Phaser.Scene {
     this.load.image("playButton", "./assets/images/playbutton.PNG");
     this.load.image("playButtonPress", "./assets/images/playbuttonpress.png");
     this.load.image("playButtonHover", "./assets/images/playbuttonhover.png");
-    this.load.image("MississippiBG", "./assets/images/MississippiBG.jpg");
+    this.load.image("MississippiBG", "./assets/mississippi_game/MississippiBG.jpg");
     this.load.image("shipanim", "./assets/images/shipanim.gif");
-    this.load.image("boat", "./assets/images/boat.png");
-    this.load.image("rock", "./assets/images/rock.png");
-    this.load.image("crate", "./assets/images/crate.png");
+    this.load.image("boat", "./assets/mississippi_game/boat.png");
+    this.load.image("rock", "./assets/mississippi_game/rock.png");
+    this.load.image("crate", "./assets/mississippi_game/crate.png");
     this.load.image("train", "assets/train_scene/train.png");
     this.load.image("house", "assets/farm_scene/houseonfire.png");
+    this.load.image("heart", "assets/mississippi_game/heart.png");
 
   }
 

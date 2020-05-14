@@ -32,8 +32,8 @@ const config: GameConfig = {
     physics: {
         default: 'arcade',
         arcade: {
-            debug: false,
-            gravity: { y: 1 }
+            debug: true,
+            gravity: { y: 0 }
         }
     },
 };
