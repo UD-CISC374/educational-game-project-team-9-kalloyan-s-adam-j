@@ -33,7 +33,7 @@ export default class HouseScene extends Phaser.Scene {
                 this.done = true;
                 this.box.destroy();// destroying the menu
                 this.scene.transition({
-                    target: 'HuntingScene',
+                    target: 'BeaverScene',
                     duration: 1000
                 });
             });

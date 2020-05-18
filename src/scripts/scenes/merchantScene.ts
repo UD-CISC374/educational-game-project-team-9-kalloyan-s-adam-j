@@ -56,7 +56,7 @@ export default class MerchantScene extends Phaser.Scene {
     this.moneyAmount = 0;
     this.coinIcon = this.add.sprite(20, 12, 'coins', 3);
     this.coinIcon.setScale(.09);
-    this.moneyText = this.add.text(this.coinIcon.displayWidth + 5, 5, "$00", { font: "20px", fill: "#000" });
+    this.moneyText = this.add.text(this.coinIcon.displayWidth + 5, 5, "$0", { font: "20px", fill: "#000" });
     this.moneyText.setOrigin(0);
 
     //creating a group for the beavers that are thrown at the buyer

@@ -38,8 +38,8 @@ export default class MapScene extends Phaser.Scene {
         nodeMI.onInputUp = () => {
             this.scene.start('BoatScene');
         }
-        
-        let nodeCO = new Button(this, 210, 160, 'reddot1')
+
+        let nodeCO = new Button(this, 263, 174, 'reddot1')//.setInteractive();
         //this.input.setDraggable(nodeCO);
         nodeCO.onInputUp = () => {
             this.scene.start('WagonScene');

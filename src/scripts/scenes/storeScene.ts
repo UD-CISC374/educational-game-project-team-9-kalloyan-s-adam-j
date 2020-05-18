@@ -93,8 +93,4 @@ export default class StoreScene extends Phaser.Scene {
     option3.setScale(.0662, .065);
   }
 
-  tooExpensive(): void{
-    
-  }
-
 }
