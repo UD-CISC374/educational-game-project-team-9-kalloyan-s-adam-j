@@ -9,6 +9,15 @@ import MerchantScene from './scenes/merchantScene';
 import Mississippi from './scenes/mississippiScene';
 import TrainScene from './scenes/trainScene';
 import HouseScene from './scenes/houseScene';
+import GoldScene from './scenes/goldScene';
+import BoatScene from './scenes/boatScene';
+import WoodsScene from './scenes/woodsScene';
+import WagonScene from './scenes/wagonScene';
+import ColoradoScene from './scenes/coloradoScene';
+import NevadaScene from './scenes/NevadaScene';
+import CaliScene from './scenes/caliScene';
+import StoreScene from './scenes/storeScene';
+import FinalScene from './scenes/finalScene';
 
 const DEFAULT_WIDTH = 600;
 const DEFAULT_HEIGHT = 400;
@@ -27,12 +36,12 @@ const config: GameConfig = {
         height: DEFAULT_HEIGHT
     },
   
-    scene: [PreloadScene, MainScene, HuntingScene, MenuScene, MerchantScene, MapScene, TrainScene, HouseScene, Mississippi],
+    scene: [PreloadScene, MainScene, HuntingScene, MenuScene, MerchantScene, MapScene, TrainScene, HouseScene, Mississippi, GoldScene, BoatScene, WoodsScene, WagonScene, ColoradoScene, NevadaScene, CaliScene, StoreScene, FinalScene],
 
     physics: {
         default: 'arcade',
         arcade: {
-            debug: true,
+            debug: false,
             gravity: { y: 0 }
         }
     },

@@ -1,6 +1,7 @@
 
 import { Time } from '../util/time';
 import InteractiveDialogBox from "../objects/interactiveDialogBox";
+import { Scene } from 'phaser';
 
 export default class Mississippi extends Phaser.Scene {
   private background: Phaser.GameObjects.TileSprite;
@@ -79,6 +80,7 @@ export default class Mississippi extends Phaser.Scene {
     //adding any menus needed throughout the game - tutorial menu, restart game menu, etc.
     //in this particular instance, it is the tutorial menu
     this.box = new InteractiveDialogBox({ scene: this, width: this.scale.width * 2 / 3, height: this.scale.height * 2 / 3, text: "PLAY" });
+    this.box._setText("WOW!! That is some strong wind!\n\nMove the mouse to avoid the obstacles and get the family safely across the river.\n\nDurability of the ship is tracked in the upper right corner.\n\n\nBe careful and good luck!");
     this.box.getInteractiveText().on('pointerdown', () => { //when the button is clicked on the menu
       this.stateOfGame = 1; //state to play the actual game
       this.startPoint = Time.getTimer(); //starting the clock of the game
@@ -143,7 +145,7 @@ export default class Mississippi extends Phaser.Scene {
   restartMenu(): void {
       this.box = new InteractiveDialogBox({ scene: this, width: this.scale.width * 2 / 3, height: this.scale.height * 2 / 3, text: "RESTART" });
       this.box.getInteractiveText().on('pointerdown', () => {
-        this.scene.restart();
+        this.scene.switch("MapScene");
       });
   
   }
@@ -153,7 +155,7 @@ export default class Mississippi extends Phaser.Scene {
     if (this.count === 3) {
       this.timer.destroy();
       this.scene.transition({
-        target: 'MapScene',
+        target: 'WoodsScene',
         duration: 1000,
       });
     }
@@ -177,7 +179,7 @@ export default class Mississippi extends Phaser.Scene {
     }
 
     player.disableBody();
-    player.setInteractive(false);
+    player.disableInteractive();
     rock.disableBody();
     //this.resetRockPos(rock);
     rock.visible = false;
@@ -194,7 +196,7 @@ export default class Mississippi extends Phaser.Scene {
       // Reenable collisions
       onComplete: () => {
         player.body.enable = true;
-        player.setInteractive(true);
+        player.setInteractive();
 
       }
     });
