@@ -14,7 +14,7 @@ export default class CaliScene extends Phaser.Scene {
     background.setScale(.35);
 
     this.box = new InteractiveDialogBox({ scene: this, width: this.scale.width * 2 / 3, height: this.scale.height * .29, text: "NEXT" });
-    this.box.setText("Before finally reaching the beautiful state of California. The journey was about 2500 miles and took nearly 7 months, but we made it. All that was left was to find gold.", true);
+    this.box.setText("Before finally reaching the beautiful state of California. The journey was about 2500 miles. All that was left was to find gold.", true);
     this.box.getInteractiveText().on('pointerdown', () => { //when the button is clicked on the menu
       this.stateOfScene = 1;
       this.box.destroy();// destroying the menu

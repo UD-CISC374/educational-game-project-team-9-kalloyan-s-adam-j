@@ -92,7 +92,7 @@ export default class Mississippi extends Phaser.Scene {
     //game state
     if (this.stateOfGame === 1) {
       //during runtime of the game
-      if (Time.getTimer() - this.startPoint < 10000 && this.numOfCollisions < 3) {
+      if (Time.getTimer() - this.startPoint <= 30000 && this.numOfCollisions < 3) {
         this.background.tilePositionY -= 2;
         for (let i = 0; i < this.rockstacles.getChildren().length; i++) {
           let rock = this.rockstacles.getChildren()[i];
@@ -117,7 +117,7 @@ export default class Mississippi extends Phaser.Scene {
         }
       } 
       //after the player successfully finishes the game in that alloted time without losing all life
-      else if (Time.getTimer() - this.startPoint >= 10000 && this.numOfCollisions < 3) {
+      else if (Time.getTimer() - this.startPoint > 30000 && this.numOfCollisions < 3) {
         this.background.tilePositionY -= 0;
         this.timer = this.time.addEvent({
           delay: 800,                // ms
