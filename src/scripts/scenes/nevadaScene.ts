@@ -14,7 +14,7 @@ export default class NevadaScene extends Phaser.Scene {
         background.setScale(1.3);
 
         this.box = new InteractiveDialogBox({ scene: this, width: this.scale.width * 2 / 3, height: this.scale.height * .29, text: "NEXT" });
-        this.box.setText("...and the scorching desert of Neveda.", true);
+        this.box.setText("...and the scorching desert of Nevada.", true);
         this.box.getInteractiveText().on('pointerdown', () => { //when the button is clicked on the menu
           this.stateOfScene = 1;
           this.box.destroy();// destroying the menu
