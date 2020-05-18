@@ -27,7 +27,19 @@ export default class PreloadScene extends Phaser.Scene {
     this.load.image("train", "assets/train_scene/train.png");
     this.load.image("house", "assets/farm_scene/houseonfire.png");
     this.load.image("heart", "assets/mississippi_game/heart.png");
-
+    this.load.image("river", "assets/gold_game/river.png");
+    this.load.image("gold", "assets/gold_game/gold.png");
+    this.load.image("twig", "assets/gold_game/twig.png");
+    this.load.image("pan", "assets/gold_game/pan.png");
+    this.load.image("rock1", "assets/gold_game/rock1.png");
+    this.load.image("rock2", "assets/gold_game/rock2.jpg");
+    this.load.image("desert", "./assets/images/desert.jpg");
+    this.load.image("snowM", "./assets/images/snowM.jpeg");
+    this.load.image("woodhouse", "./assets/images/woodhouse.png");
+    this.load.image("boatscene", "./assets/images/boatscene.png");
+    this.load.image("woodsScene", "./assets/images/MandW.png");
+    this.load.image("wagon", "./assets/images/wagon.png");
+    this.load.image("cali", "./assets/images/cali.png");
   }
 
   create() {

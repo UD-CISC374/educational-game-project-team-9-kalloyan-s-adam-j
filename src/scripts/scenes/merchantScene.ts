@@ -1,5 +1,6 @@
 import HuntingScene from "./huntingScene";
 import DialogBox from "../objects/dialogBox";
+import InteractiveDialogBox from "../objects/interactiveDialogBox";
 
 export default class MerchantScene extends Phaser.Scene {
   private background: Phaser.GameObjects.Image;
@@ -12,123 +13,119 @@ export default class MerchantScene extends Phaser.Scene {
   private coinIcon: Phaser.GameObjects.Image;
   private moneyText: Phaser.GameObjects.Text;
   private num: number;
-  private box: DialogBox;
+  private box: InteractiveDialogBox;
+  private stateOfScene: number = 0;
+  private done: boolean = true;
 
-    constructor() {
-      super({ key: 'MerchantScene' });
-    }
+  constructor() {
+    super({ key: 'MerchantScene' });
+  }
 
-    init(data){
-      this.beaverCount = data.score;
-    }
-  
-    create() {
-      //adding the background to the scene
-      this.background = this.add.image(0, 0, "logCabin");
-      this.background.setOrigin(0,0);
-      this.background.setScale(.3, .24);
+  init(data) {
+    this.beaverCount = data.score;
+  }
 
-      //adding the Hudson Bay Company to the cabin
-      let companyName = this.add.text(397, 160, "Hudson Bay\n Company", {font: "bold 15px Arial", fill: "#fff"});
-      companyName.setOrigin(0.5, 0.5);
-      companyName.setAlign("center");
+  create() {
+    //adding the background to the scene
+    this.background = this.add.image(0, 0, "logCabin");
+    this.background.setOrigin(0, 0);
+    this.background.setScale(.3, .24);
 
-      //adding the dad character
-      this.dad = this.physics.add.sprite(450, 325, "dad");
-      this.dad.setScale(.2);
+    //adding the Hudson Bay Company to the cabin
+    let companyName = this.add.text(397, 160, "Hudson Bay\n Company", { font: "bold 15px Arial", fill: "#fff" });
+    companyName.setOrigin(0.5, 0.5);
+    companyName.setAlign("center");
 
-      //adding the buyer character
-      this.buyer = this.physics.add.sprite(350, 325, "buyer");
-      this.buyer.setScale(.27);
+    //adding the dad character
+    this.dad = this.physics.add.sprite(450, 325, "dad");
+    this.dad.setScale(.2);
 
-      this.box = new DialogBox(this, "After my dad's last hunt, we sold the furs.");
+    //adding the buyer character
+    this.buyer = this.physics.add.sprite(350, 325, "buyer");
+    this.buyer.setScale(.27);
 
-      //adding the money count at the top left corner
-      this.moneyAmount = 0;
-      this.coinIcon = this.add.sprite(20, 12, 'coins', 3);
-      this.coinIcon.setScale(.09);
-      this.moneyText = this.add.text(this.coinIcon.displayWidth + 5, 5, "$.00", {font: "20px", fill: "#000"});
-      this.moneyText.setOrigin(0);
+    //this.box = new DialogBox(this, "After my dad's last hunt, we sold the furs.");
+    this.box = new InteractiveDialogBox({ scene: this, width: this.scale.width * 2 / 3, height: this.scale.height * .29, text: "NEXT" });
+    this.box.setText("After my dad's last hunt, we sold the furs.", true);
+    this.box.getInteractiveText().on('pointerdown', () => { //when the button is clicked on the menu
+      this.stateOfScene = 1;
+      this.box.destroy();// destroying the menu
+    });
 
-      //creating a group for the beavers that are thrown at the buyer
-      this.beavers = this.physics.add.group({
-        gravityY:400
-      });
+    //adding the money count at the top left corner
+    this.moneyAmount = 0;
+    this.coinIcon = this.add.sprite(20, 12, 'coins', 3);
+    this.coinIcon.setScale(.09);
+    this.moneyText = this.add.text(this.coinIcon.displayWidth + 5, 5, "$00", { font: "20px", fill: "#000" });
+    this.moneyText.setOrigin(0);
 
-      this.num = 0;
+    //creating a group for the beavers that are thrown at the buyer
+    this.beavers = this.physics.add.group({
+      gravityY: 400
+    });
 
+    this.num = 0;
+
+    //handler for when the beavers collide with the buyer
+    this.physics.add.overlap(this.beavers, this.buyer, this.takeBeavers, undefined, this);
+  }
+
+  update() {
+    if (this.stateOfScene === 1 && this.done) {
+      this.done = false;
       //adding a timer to throw the beavers at certain intervals
       this.timer = this.time.addEvent({
-        delay: 500,                // ms
+        delay: 300,                // ms
         callback: this.spawnBeaver,
         callbackScope: this,
         loop: true
-    });
-    //handler for when the beavers collide with the buyer
-    this.physics.add.overlap(this.beavers, this.buyer, this.takeBeavers, undefined, this);
-    }
-  
-    update() {
+      });
+      this.stateOfScene = 2;
+    } else if (this.stateOfScene === 2) {
       //changing the x coordinate of the thrown beavers
-      this.beavers.children.iterate(function(child){
-        if(child.x > 400)
+      this.beavers.children.iterate(function (child) {
+        if (child.x > 400)
           child.setVelocityY(-100);
         child.setVelocityX(-200);
       }.bind(this));
       //updating the text for the money count
       this.moneyText.text = "$" + this.moneyAmount;
-      if(this.box.completedDialog() && this.box.getDialogCount() === 2){
-        this.timer = this.time.addEvent({
-          delay: 2000,                // ms
-          callback: this.transitionToNextScene,
-          callbackScope: this,
-          repeat: 1
+    }
+    else if (this.stateOfScene === 3 && this.done) {
+      this.done = false;
+      this.box = new InteractiveDialogBox({ scene: this, width: this.scale.width * 2 / 3, height: this.scale.height * .29, text: "NEXT" });
+      this.box.setText("With $" + this.moneyAmount + " we began our journey west.", true);
+      this.box.getInteractiveText().on('pointerdown', () => { //when the button is clicked on the menu
+        this.box.destroy();// destroying the menu
+        this.scene.transition({
+          target: 'TrainScene',
+          duration: 1500
+        });
       });
-      /*this.scene.transition({
-        target:  'TrainScene',
-        duration: 15000
-      });*/
-      }
-          
     }
 
-    //creates the beavers and adds them to the beavers group
-    spawnBeaver():void {
-      if(this.box.completedDialog() && this.box.getDialogCount() === 1 && this.beaverCount > 0){
+
+  }
+
+  spawnBeaver(): void {
+    if (this.num < this.beaverCount) {
       this.num += 1;
       let beaver = this.physics.add.sprite(435, 340, "beaver", 3);
       beaver.setScale(.75);
-      /*let points = [ 50, 400, 200, 200, 350, 300, 500, 500, 700, 400 ];
-      let curve = new Phaser.Curves.Spline(points);
-      let path = this.add.path(445, 325);
-      let curve = new Phaser.Curves.Line([445, 325, 400, 300]);
-      let curve2 = new Phaser.Curves.Line([400, 300, 350, 325]);
-      path.add(curve);
-      path.add(curve2);
-      let graphics = this.add.graphics();
-
-      graphics.lineStyle(3, 0xffffff, 1);
-  
-      path.draw(graphics, 128);
-      let beaver = this.add.follower(path, 445, 325, "beaver", 3);
-      beaver.startFollow(4000);*/
       this.beavers.add(beaver);
-    }else if(this.beaverCount == 0)
-      this.scene.switch('HuntingScene');
+    } else {
+      this.timer.remove();
+      this.done = true;
+      this.stateOfScene = 3;
     }
 
-    //destroys the beavers and increases the money count
-    takeBeavers(buyer, beaver):void{
-      this.beavers.remove(beaver);
-      beaver.destroy();
-      this.moneyAmount += .75;
-      if(this.num === this.beaverCount){
-        this.box.setText(this, "With $" + this.moneyAmount + " we began our journey West.");
-        this.timer.destroy();
-      }
-    }
-
-    transitionToNextScene(): void{
-      this.scene.start('TrainScene');
-    }
   }
+
+  //destroys the beavers and increases the money count
+  takeBeavers(buyer, beaver): void {
+    this.beavers.remove(beaver);
+    beaver.destroy();
+    this.moneyAmount += .75;
+  }
+
+}
