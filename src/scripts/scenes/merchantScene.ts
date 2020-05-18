@@ -9,7 +9,7 @@ export default class MerchantScene extends Phaser.Scene {
   private beaverCount: number;
   private beavers: Phaser.Physics.Arcade.Group;
   private timer: Phaser.Time.TimerEvent;
-  private moneyAmount: number;
+  public moneyAmount: number;
   private coinIcon: Phaser.GameObjects.Image;
   private moneyText: Phaser.GameObjects.Text;
   private num: number;

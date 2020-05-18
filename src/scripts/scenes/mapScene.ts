@@ -1,9 +1,11 @@
 import { Button } from "../objects/button";
+import MerchantScene from "./merchantScene";
 
 export default class MapScene extends Phaser.Scene {
     background: Phaser.GameObjects.Image;
     pointer: Phaser.Input.Pointer;
     label: Phaser.GameObjects.Text;
+    
 
     constructor() {
         super({key: 'MapScene'});
@@ -16,6 +18,7 @@ export default class MapScene extends Phaser.Scene {
 
         this.background = this.add.image(0,0,'usmap'); //find a map background. 
         this.background.setOrigin(0,0); 
+        this.background.setScale(.31);
 
 
         /**
@@ -25,26 +28,26 @@ export default class MapScene extends Phaser.Scene {
          * to set the buttons x and y locations in the final dev.
          */
 
-        let nodeNY = new Button(this, 500, 90, 'reddot1')//.setInteractive(); 
+        let nodeNY = new Button(this, 505, 100, 'reddot1')//.setInteractive(); 
         //this.input.setDraggable(nodeNY);
         nodeNY.onInputUp = () => {
           this.scene.start('HouseScene');
         }
         nodeNY.setOrigin(0)
 
-        let nodeMI = new Button(this, 365,175, 'reddot1')//.setInteractive();
+        let nodeMI = new Button(this, 365,180, 'reddot1')//.setInteractive();
         //this.input.setDraggable(nodeMI);
         nodeMI.onInputUp = () => {
             this.scene.start('BoatScene');
         }
 
-        let nodeCO = new Button(this, 230, 155, 'reddot1')//.setInteractive();
+        let nodeCO = new Button(this, 225, 170, 'reddot1')//.setInteractive();
         //this.input.setDraggable(nodeCO);
         nodeCO.onInputUp = () => {
             this.scene.start('WagonScene');
         }
 
-        let nodeCA = new Button(this, 35, 195, 'reddot1')//.setInteractive();
+        let nodeCA = new Button(this, 40, 195, 'reddot1')//.setInteractive();
         //this.input.setDraggable(nodeCA);
         nodeCA.onInputUp = () => {
             this.scene.start('CaliScene');
@@ -58,15 +61,16 @@ export default class MapScene extends Phaser.Scene {
         // });
         
 
-        //Displays x and y position of the mouse. this is for development purposes.
-        this.label = this.add.text(0, 0, '(x, y)', { fontFamily: '"Monospace"'});
+        // //Displays x and y position of the mouse. this is for development purposes.
+        this.label = this.add.text(200, 0, 'The United States of America', { fontFamily: '"Monospace"'});
         this.label.setFill(255);
-        this.pointer = this.input.activePointer;
+        
+        //this.pointer = this.input.activePointer;
 
     }
 
     update() {
-        this.label.setText('(' + this.pointer.x + ', ' + this.pointer.y + ')');
+        //this.label.setText('(' + this.pointer.x + ', ' + this.pointer.y + ')');
         //Could we store user information and update their score/progress/whatever to be displayed on the map screen?
 
     }

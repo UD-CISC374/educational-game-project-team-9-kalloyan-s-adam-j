@@ -13,6 +13,8 @@ export default class MenuScene extends Phaser.Scene {
         this.background = this.add.image(0,0,"menuscreenbg");
         this.background.setOrigin(0,0);
 
+        this.add.image(300,100, "title");
+
         let btn1 = new Button(this, 200, 250, 'playButton');
         btn1.onInputUp = () => {
           this.scene.start('MapScene');
