@@ -11,6 +11,7 @@ export default class Mississippi extends Phaser.Scene {
   scoreText: Phaser.GameObjects.Text;
   crateIcon: Phaser.GameObjects.Sprite;
   gameWonText: Phaser.GameObjects.Text;
+
   
   constructor() {
       super({ key: 'Mississippi' });
