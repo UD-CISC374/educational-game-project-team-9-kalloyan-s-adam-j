@@ -4,7 +4,7 @@ export class Button extends Phaser.GameObjects.Sprite {
   onInputUp = () => {}
   onInputDown = () => {}
   
-  
+ 
 
   constructor(scene, x, y, texture) {
     super(scene, x, y, texture)

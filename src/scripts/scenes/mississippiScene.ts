@@ -15,6 +15,7 @@ export default class Mississippi extends Phaser.Scene {
   scoreText: Phaser.GameObjects.Text;
   crateIcon: Phaser.GameObjects.Sprite;
   gameWonText: Phaser.GameObjects.Text;
+
   private input1: Phaser.Input.InputPlugin;
   private numOfCollisions: number = 0;
   private heart1: Phaser.GameObjects.Sprite;
@@ -25,6 +26,7 @@ export default class Mississippi extends Phaser.Scene {
   private timer: Phaser.Time.TimerEvent;
   private stateOfGame: number = 0;
   private box: InteractiveDialogBox;
+
 
   constructor() {
     super({ key: 'Mississippi' });
