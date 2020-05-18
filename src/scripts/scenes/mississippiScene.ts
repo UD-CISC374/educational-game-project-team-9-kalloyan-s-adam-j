@@ -111,6 +111,14 @@ export default class Mississippi extends Phaser.Scene {
           //console.log("input.x: " + this.input1.x);
           if (this.player.x < this.input1.x + 3 && this.player.x > this.input1.x - 3) {
             this.physics.moveTo(this.player, this.input1.x, this.player.y, 0);
+          } else if (this.input.x < 90 && this.player.x >= 90) {
+            this.physics.moveTo(this.player, 90, this.player.y, 100);
+          }else if (this.input.x < 90 && this.player.x < 90) {
+            this.physics.moveTo(this.player, 90, this.player.y, 0);
+          } else if (this.input.x > this.scale.width - 90 && this.player.x <= this.scale.width - 90) {
+            this.physics.moveTo(this.player, this.scale.width - 90, this.player.y, 100);
+          }else if (this.input.x > this.scale.width - 90 && this.player.x > this.scale.width - 90) {
+            this.physics.moveTo(this.player, this.scale.width - 90, this.player.y, 0);
           } else {
             this.physics.moveTo(this.player, this.input1.x, this.player.y, 100);
           }
@@ -143,8 +151,9 @@ export default class Mississippi extends Phaser.Scene {
   }
 
   restartMenu(): void {
-      this.box = new InteractiveDialogBox({ scene: this, width: this.scale.width * 2 / 3, height: this.scale.height * 2 / 3, text: "RESTART" });
-      this.box.getInteractiveText().on('pointerdown', () => {
+    this.box = new InteractiveDialogBox({ scene: this, width: this.scale.width * 2 / 3, height: this.scale.height * .29, text: "RESTART" });
+    this.box.setText("In order to restart the game, you must refresh the page. Sorry for the inconvenience.", false);
+    this.box.getInteractiveText().on('pointerdown', () => {
         this.scene.switch("MapScene");
       });
   

@@ -26,7 +26,7 @@ export default class BoatScene extends Phaser.Scene {
         if(this.stateOfScene === 1)
             this.scene.transition({
                 target: 'Mississippi',
-                duration: 1500
+                duration: 1000
             });
     }
 

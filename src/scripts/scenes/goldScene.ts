@@ -64,11 +64,11 @@ export default class GoldScene extends Phaser.Scene {
     //adding the money count at the top left corner
     this.coinIcon = this.add.sprite(20, 12, 'coins', 3);
     this.coinIcon.setScale(.09);
-    this.moneyText = this.add.text(this.coinIcon.displayWidth + 5, 5, "$.00", { font: "20px", fill: "#000" });
+    this.moneyText = this.add.text(this.coinIcon.displayWidth + 5, 5, "$0", { font: "20px", fill: "#000" });
     this.moneyText.setOrigin(0);
 
     this.box = new InteractiveDialogBox({ scene: this, width: this.scale.width * 2 / 3, height: this.scale.height * 2 / 3, text: "PLAY" });
-    this.box._setText("Move the pan in order to collect as much gold as you can by using the mouse.\n\nOther debris slows you down, so watch out!");
+    this.box._setText("After some searching, the family found a stream with gold.\n\nMove the pan with the mouse in order to help them collect as much gold as they can.\n\nOther debris slows you down, so watch out!");
     this.box.getInteractiveText().on('pointerdown', () => { //when the button is clicked on the menu
       this.stateOfGame = 1; //state to play the actual game
       this.startPoint = Time.getTimer(); //starting the clock of the game

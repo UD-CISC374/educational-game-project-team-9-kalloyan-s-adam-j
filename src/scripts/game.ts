@@ -18,6 +18,7 @@ import NevadaScene from './scenes/NevadaScene';
 import CaliScene from './scenes/caliScene';
 import StoreScene from './scenes/storeScene';
 import FinalScene from './scenes/finalScene';
+import BeaverScene from './scenes/beaverScene';
 
 const DEFAULT_WIDTH = 600;
 const DEFAULT_HEIGHT = 400;
@@ -36,7 +37,7 @@ const config: GameConfig = {
         height: DEFAULT_HEIGHT
     },
   
-    scene: [PreloadScene, MainScene, HuntingScene, MenuScene, MerchantScene, MapScene, TrainScene, HouseScene, Mississippi, GoldScene, BoatScene, WoodsScene, WagonScene, ColoradoScene, NevadaScene, CaliScene, StoreScene, FinalScene],
+    scene: [PreloadScene, MainScene, HuntingScene, MenuScene, MerchantScene, MapScene, TrainScene, HouseScene, Mississippi, GoldScene, BoatScene, WoodsScene, WagonScene, ColoradoScene, NevadaScene, CaliScene, StoreScene, FinalScene, BeaverScene],
 
     physics: {
         default: 'arcade',
