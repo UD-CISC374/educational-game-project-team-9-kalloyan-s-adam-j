@@ -99,7 +99,7 @@ export default class MerchantScene extends Phaser.Scene {
         this.box.destroy();// destroying the menu
         this.scene.transition({
           target: 'TrainScene',
-          duration: 1500
+          duration: 1000
         });
       });
     }

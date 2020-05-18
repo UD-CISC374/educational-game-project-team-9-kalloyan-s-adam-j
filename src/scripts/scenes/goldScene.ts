@@ -11,6 +11,10 @@ export default class GoldScene extends Phaser.Scene {
   private moneyAmount: number = 0;
   private coinIcon: Phaser.GameObjects.Sprite;
   private moneyText: Phaser.GameObjects.Text;
+  private timer: Phaser.Time.TimerEvent;
+  private allObjects: Phaser.Physics.Arcade.Group;
+  private count: number = 0;
+  private complete: boolean = false; 
 
   constructor() {
     super({ key: 'GoldScene' });
@@ -51,6 +55,9 @@ export default class GoldScene extends Phaser.Scene {
     this.trash = this.physics.add.group();
     this.trash.addMultiple([rock1, rock2, rock3, twig1, twig2]);
 
+    this.allObjects = this.physics.add.group();
+    this.allObjects.addMultiple([gold1, gold2, gold3, rock1, rock2, rock3, twig1, twig2]);
+
     this.physics.add.overlap(this.pan, this.gold, this.goldCollide, undefined, this);
     this.physics.add.overlap(this.pan, this.trash, this.trashCollide, undefined, this);
 
@@ -71,7 +78,7 @@ export default class GoldScene extends Phaser.Scene {
 
   update() {
     if (this.stateOfGame === 1) {
-      if (Time.getTimer() - this.startPoint < 60000) {
+      if (Time.getTimer() - this.startPoint <= 60000) {
         if (this.pan.y < this.input.y + 5 && this.pan.y > this.input.y - 5) {
           this.physics.moveTo(this.pan, this.pan.x, this.input.y, 0);
         } else if (this.input.y < 218 && this.pan.y >= 218) {
@@ -92,7 +99,26 @@ export default class GoldScene extends Phaser.Scene {
         }
         this.moneyText.text = "$" + this.moneyAmount;
       }
+      else if(Time.getTimer() - this.startPoint > 60000 && this.complete === false){
+        this.complete = true;
+        this.timer = this.time.addEvent({
+          delay: 400,                // ms
+          callback: this.destroyObjects,
+          callbackScope: this,
+          loop: true
+        });
+      }
     }
+  }
+
+  destroyObjects(): void {
+    this.allObjects.getChildren()[0].destroy();
+    if (this.count === 7) {
+      this.timer.destroy();
+      this.scene.start('StoreScene', {dollars: this.moneyAmount});
+    }
+    this.count++;
+
   }
 
   moveObject(object, speed): void {
