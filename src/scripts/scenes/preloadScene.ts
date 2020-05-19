@@ -6,6 +6,7 @@ export default class PreloadScene extends Phaser.Scene {
 
   preload() {
     this.load.image("usmap", "./assets/images/usmap.png");
+    this.load.image("titleimg", "./assets/images/titleimg.png");
     this.load.image("reddot1", "./assets/images/reddot1.png");
     this.load.image("forest", "assets/beaver_game/BG.png");
     this.load.spritesheet("beaver", "assets/beaver_game/beaver-NESW.png", {frameWidth: 64, frameHeight: 64});
