@@ -56,18 +56,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaassets/icons/icons8-game-controller-16.png"
   },
   {
-    "revision": "38fb005dfddd15993e0891ae2c478e9b",
-    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaassets/images/MississippiBG.jpg"
-  },
-  {
-    "revision": "6db9dcc4ae2491a3218dc64ad52942ce",
-    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaassets/images/boat.png"
-  },
-  {
-    "revision": "1637d6a4b4b8f2c71f75386fea587665",
-    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaassets/images/crate.png"
-  },
-  {
     "revision": "4978e5cde168918a0a621f834b078f15",
     "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaassets/images/menu_background.jpg"
   },
@@ -78,14 +66,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "ca275804f73d32cc1179a4a9fd1a326f",
     "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaassets/images/reddot1.png"
-  },
-  {
-    "revision": "792eb986d4e7c365a597e4c0453b3d2e",
-    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaassets/images/rock.png"
-  },
-  {
-    "revision": "79a5434af25441369ae5f628ef9f1f81",
-    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaassets/images/shipanim.gif"
   },
   {
     "revision": "e4e8da5027663d41c9495275c68c0dc7",
@@ -120,15 +100,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betafavicon.ico"
   },
   {
-    "revision": "a765e566ad35e8450f39",
-    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betagen.main.ac6feaad4b3f8ffa9b20.bundle.js"
+    "revision": "d54649ad921925419ba9",
+    "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betagen.main.8911140c62551c0934c8.bundle.js"
   },
   {
     "revision": "79244101a84faa626992",
     "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betagen.vendors.b45a024788a7c2f75858.bundle.js"
   },
   {
-    "revision": "990ebda29df9fb2a76d017dc64b93a79",
+    "revision": "c65aef5342fa5a11bf87eadafbd78115",
     "url": "/educational-game-project-team-9-kalloyan-s-adam-j/betaindex.html"
   },
   {
