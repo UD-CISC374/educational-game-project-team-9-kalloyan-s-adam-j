@@ -62,15 +62,15 @@ export default class MapScene extends Phaser.Scene {
         
 
         //Displays x and y position of the mouse. this is for development purposes.
-        this.label = this.add.text(0, 0, '(x, y)', { fontFamily: '"Monospace"'});
+        /*this.label = this.add.text(0, 0, '(x, y)', { fontFamily: '"Monospace"'});
         this.label.setFill(255);
-        this.pointer = this.input.activePointer;
+        this.pointer = this.input.activePointer;*/
 
     }
 
     update() {
-        this.label.setText('(' + this.pointer.x + ', ' + this.pointer.y + ')');
-        //Could we store user information and update their score/progress/whatever to be displayed on the map screen?
+        /*this.label.setText('(' + this.pointer.x + ', ' + this.pointer.y + ')');
+        //Could we store user information and update their score/progress/whatever to be displayed on the map screen?*/
     }
 
 }
